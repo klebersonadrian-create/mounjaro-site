@@ -1,8 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<html lang="pt-BR">
-<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mounjaro-site</title>
+
+<!-- AOS Animate On Scroll -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init();
+  });
+</script>
+</head>
+<body>
+<!DOCTYPE html>
+
+
   <!-- Medição de performance -->
 <script>
   !function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);
@@ -93,10 +108,11 @@
   }(window, document, 'ttq');
   </script>
   <!-- TikTok Pixel Code End -->
-</head>
-<body>
+
+<body class="bg-stone-50 text-stone-800">
 
   
+</html>
 
   <!-- Metadados principais -->
   <meta charset="UTF-8">
@@ -179,8 +195,11 @@
             background-color: #d4a574 !important;
         }
     </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
 
     <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-stone-200">
         <div class="max-w-6xl mx-auto px-4 py-6">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
@@ -783,6 +802,8 @@
   </section>
 
 
+</html>
+
     <!-- Garantias -->
     <section class="py-20 px-4 gradient-bg">
         <div class="max-w-6xl mx-auto">
@@ -1265,107 +1286,8 @@
       })();
     </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    let currentSlide = 0;
-    const carousel = document.getElementById('celebrityCarousel');
-    const indicators = document.querySelectorAll('.carousel-indicator');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
+</body>
+</html>
 
-    function updateCarousel() {
-      if (!carousel || !carousel.children.length) return;
-      const slideWidth = carousel.children[0].offsetWidth || 0;
-      carousel.style.transform = `translateX(-${currentSlide * (slideWidth + 24)}px)`;
-      indicators.forEach((el, i) => el.classList.toggle('active', i === currentSlide));
-    }
-
-    function nextSlide() {
-      if (currentSlide < indicators.length - 1) {
-        currentSlide++;
-        updateCarousel();
-      }
-    }
-
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateCarousel();
-      }
-    }
-
-    if (nextBtn) nextBtn.onclick = nextSlide;
-    if (prevBtn) prevBtn.onclick = prevSlide;
-
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentSlide = index;
-        updateCarousel();
-      });
-    });
-
-    // Evento WhatsAppClick
-    document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
-      link.addEventListener('click', function () {
-        fetch("https://graph.facebook.com/v18.0/24126784976983641/events?access_token=EAAGxXdphinYBPMU6OKQsIP9o5yQ5tVULVfbjDj5xURqdgUE6YG4KC4u10dApvZC7b7Pr4NNaaWnmDAodX32PfQSxDyP3IkZA6eVar8CZB0ZBhgBbbKU8xIEvOQPXBDANTN2SJAgJUss4KiZAYOrTZCkE7nwTDJ3JaMuhDO3fGBCDZCQmZBZCVr3MQ1p1A9yFKJoj3ZCwZDZD", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            data: [{
-              event_name: "WhatsAppClick",
-              event_time: Math.floor(Date.now() / 1000),
-              action_source: "website",
-              event_source_url: window.location.href,
-              user_data: {
-                client_user_agent: navigator.userAgent
-              }
-            }]
-          })
-        });
-      });
-    });
-  });
-</script>
-
-<!-- script Cloudflare corrigido -->
-<script>
-  (function () {
-    function c() {
-      var iframeDoc = cfIframe.contentDocument || cfIframe.contentWindow.document;
-      if (iframeDoc) {
-        var s = iframeDoc.createElement('script');
-        s.innerHTML = "window.__CF$cv$params={r:'961d86fcf48f6f7f',t:'MTc1Mjk2MjgwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-        iframeDoc.getElementsByTagName('head')[0].appendChild(s);
-      }
-    }
-
-    if (document.body) {
-      var cfIframe = document.createElement('iframe');
-      cfIframe.height = 1;
-      cfIframe.width = 1;
-      cfIframe.style.position = 'absolute';
-      cfIframe.style.top = 0;
-      cfIframe.style.left = 0;
-      cfIframe.style.border = 'none';
-      cfIframe.style.visibility = 'hidden';
-      document.body.appendChild(cfIframe);
-
-      if (document.readyState !== 'loading') {
-        c();
-      } else if (window.addEventListener) {
-        document.addEventListener('DOMContentLoaded', c);
-      } else {
-        var prev = document.onreadystatechange || function () { };
-        document.onreadystatechange = function (e) {
-          prev(e);
-          if (document.readyState !== 'loading') {
-            document.onreadystatechange = prev;
-            c();
-          }
-        };
-      }
-    }
-  })();
-</script>
 </body>
 </html>
