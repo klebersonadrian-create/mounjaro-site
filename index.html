@@ -2,24 +2,24 @@
 <html lang="pt-BR">
 <head>
   <!-- Medição de performance -->
-  <script>
-    !function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);
-  </script>
+<script>
+  !function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);
+</script>
 
   <!-- Preload dos 4 vídeos (3 principais + depoimento) -->
-  <link rel="preload" href="https://scripts.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/players/687c86c67d725bff283cb373/v4/player.js" as="script">
-  <link rel="preload" href="https://scripts.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/players/687c858923605749de807f8b/v4/player.js" as="script">
-  <link rel="preload" href="https://scripts.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/players/687c860fb59fc4bcfb96bb72/v4/player.js" as="script">
-  <link rel="preload" href="https://scripts.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/players/687c89312a38c6be43a202d6/v4/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/688f7877a041733069c91703/v4/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/688f7830a041733069c916a1/v4/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/688f7857a041733069c916e5/v4/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/688f771a51ec00e4ce206f7f/v4/player.js" as="script">
 
   <!-- Smartplayer principal -->
   <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
 
   <!-- Preload dos arquivos .m3u8 -->
-  <link rel="preload" href="https://cdn.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/687c86b323605749de80808a/main.m3u8" as="fetch">
-  <link rel="preload" href="https://cdn.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/687c8511a159330096eff35f/main.m3u8" as="fetch">
-  <link rel="preload" href="https://cdn.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/687c85f303cd186056ea699b/main.m3u8" as="fetch">
-  <link rel="preload" href="https://cdn.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/687c88d2886aa48cc31649ec/main.m3u8" as="fetch">
+  <link rel="preload" href="https://cdn.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/688f785951ec00e4ce2070bf/main.m3u8" as="fetch">
+  <link rel="preload" href="https://cdn.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/688f771c4c79100934d3c684/main.m3u8" as="fetch">
+  <link rel="preload" href="https://cdn.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/688f7833046e088eb87a6bca/main.m3u8" as="fetch">
+  <link rel="preload" href="https://cdn.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/688f7690046e088eb87a6a20/main.m3u8" as="fetch">
 
   <!-- DNS Prefetch -->
   <link rel="dns-prefetch" href="https://cdn.converteai.net">
@@ -42,6 +42,55 @@
     .text-gradient { background: linear-gradient(135deg, #d4a574 0%, #c19a6b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .shadow-elegant { box-shadow: 0 10px 40px rgba(212, 165, 116, 0.1); }
   </style>
+<!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '24126784976983641');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=24126784976983641&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- TikTok Pixel Code Start -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+    ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+    ttq.setAndDefer=function(t,e){
+      t[e]=function(){
+        t.push([e].concat(Array.prototype.slice.call(arguments,0)))
+      }
+    };
+    for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+    ttq.instance=function(t){
+      for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)
+        ttq.setAndDefer(e,ttq.methods[n]);
+      return e
+    };
+    ttq.load=function(e,n){
+      var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;
+      ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date;
+      ttq._o=ttq._o||{},ttq._o[e]=n||{};
+      n=document.createElement("script");
+      n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;
+      e=document.getElementsByTagName("script")[0];
+      e.parentNode.insertBefore(n,e)
+    };
+
+    ttq.load('D28E1BJC77U4PO0EQPI0');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+  <!-- TikTok Pixel Code End -->
 </head>
 <body class="bg-stone-50 text-stone-800">
 
@@ -314,30 +363,31 @@
 
     <!-- Seção de Vídeos da Especialista -->
 <section class="py-20 px-4 gradient-bg">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl lg:text-5xl font-light text-stone-800 mb-6">
-                Apresentação da nossa <span class="text-gradient font-medium">caneta injetável</span>
-            </h2>
-            <p class="text-xl text-stone-600 font-light max-w-4xl mx-auto leading-relaxed">
-                Entenda por que a maioria usa a caneta Mounjaro do jeito errado — e como funcionam as dosagens.
-            </p>
-        </div>
-        <div class="flex justify-center items-center mb-12">
-            <div class="w-full max-w-lg mx-auto">
-                <!-- Vídeo embed Vturb -->
-                <vturb-smartplayer
-                    id="vid-687c86c67d725bff283cb373"
-                    style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
-                </vturb-smartplayer>
-                <script type="text/javascript">
-                    var s = document.createElement("script");
-                    s.src = "https://scripts.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/players/687c86c67d725bff283cb373/v4/player.js";
-                    s.async = true;
-                    document.head.appendChild(s);
-                </script>
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-light text-stone-800 mb-6">
+        Apresentação da nossa <span class="text-gradient font-medium">caneta injetável</span>
+      </h2>
+      <p class="text-xl text-stone-600 font-light max-w-4xl mx-auto leading-relaxed">
+        Entenda por que a maioria usa a caneta Mounjaro do jeito errado — e como funcionam as dosagens.
+      </p>
+    </div>
+    <div class="flex justify-center items-center mb-12">
+      <div class="w-full max-w-lg mx-auto">
+        <!-- Novo Vídeo embed Vturb -->
+        <vturb-smartplayer
+          id="vid-688f7877a041733069c91703"
+          style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
+        </vturb-smartplayer>
+        <script type="text/javascript">
+          var s = document.createElement("script");
+          s.src = "https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/688f7877a041733069c91703/v4/player.js";
+          s.async = true;
+          document.head.appendChild(s);
+        </script>
 
-                <!-- Texto abaixo do vídeo -->
+        <!-- Texto abaixo do vídeo -->
+
                 <div class="text-left mt-8 px-4">
                     <h3 class="text-xl font-medium text-stone-800 mb-3">Nossa caneta oficial Lilly</h3>
                     <p class="text-stone-600 font-light mb-6 leading-relaxed">A maioria das pessoas nem imagina quantas doses pode extrair de uma única caneta. Você sabe?</p>
@@ -367,21 +417,18 @@
         </div>
         <div class="flex justify-center">
             <!-- Vídeo embed Vturb da reportagem -->
-            <div class="w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-elegant" style="aspect-ratio: 16/9;">
-                <vturb-smartplayer
-                    id="vid-687c858923605749de807f8b"
-                    style="display: block; margin: 0 auto; width: 100%; height: 100%; border-radius: 1.5rem;">
-                </vturb-smartplayer>
-                <script type="text/javascript">
-                    var s = document.createElement("script");
-                    s.src = "https://scripts.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/players/687c858923605749de807f8b/v4/player.js";
-                    s.async = true;
-                    document.head.appendChild(s);
-                </script>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="w-full max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-elegant" style="aspect-ratio: 16/9;">
+  <vturb-smartplayer
+    id="vid-688f7830a041733069c916a1"
+    style="display: block; margin: 0 auto; width: 100%; height: 100%; border-radius: 1.5rem;">
+  </vturb-smartplayer>
+  <script type="text/javascript">
+    var s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/688f7830a041733069c916a1/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+  </script>
+</div>
 
                     
                     <!-- Informações adicionais sobre a reportagem -->
@@ -395,38 +442,27 @@
         </div>
     </section>
 
-    <!-- Seção Educativa -->
-    <section class="py-20 px-4 gradient-bg">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-light text-stone-800 mb-6">
-                    Você sabe o que é <span class="text-gradient font-medium">GLP-1</span>?
-                </h2>
-                <p class="text-xl text-stone-600 font-light max-w-3xl mx-auto leading-relaxed">
-                    O GLP-1 é um hormônio que regula a fome, a glicose e o metabolismo de gordura.<br>
-                    Enquanto o Ozempic atua em um único receptor (GLP-1), o Mounjaro ativa dois: GLP-1 e GIP.<br>
-                    Resultado? Mais potência e menos desconforto
-                </p>
-            </div>
-            <div class="flex justify-center mb-12">
-                <div class="w-80 h-96 bg-gradient-to-br from-stone-100 to-stone-200 rounded-3xl shadow-elegant flex items-center justify-center">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-stone-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <svg class="w-8 h-8 text-stone-500" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
-                        <p class="text-stone-500 font-light">Vídeo Explicativo</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <button class="btn-primary text-white px-8 py-4 rounded-full text-lg font-medium shadow-elegant">
-                    Agendar nossa conversa agora
-                </button>
-            </div>
+<!-- Seção Educativa -->
+<section class="py-20 px-4 gradient-bg">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-light text-stone-800 mb-6">
+                Você sabe o que é <span class="text-gradient font-medium">GLP-1</span>?
+            </h2>
+            <p class="text-xl text-stone-600 font-light max-w-3xl mx-auto leading-relaxed">
+                O GLP-1 é um hormônio que regula a fome, a glicose e o metabolismo de gordura.<br>
+                Enquanto o Ozempic atua em um único receptor (GLP-1), o Mounjaro ativa dois: GLP-1 e GIP.<br>
+                Resultado? Mais potência e menos desconforto
+            </p>
         </div>
-    </section>
+        <div class="text-center">
+            <button class="btn-primary text-white px-8 py-4 rounded-full text-lg font-medium shadow-elegant">
+                Agendar nossa conversa agora
+            </button>
+        </div>
+    </div>
+</section>
+
 
     <!-- Famosas usando o produto -->
     <section class="py-20 px-4 bg-white">
@@ -581,18 +617,19 @@
         </div>
 
         <!-- Embed Vturb (vídeo vertical) -->
-        <div class="w-full h-full relative overflow-hidden bg-black" id="reelsVideoContainer">
-            <vturb-smartplayer
-                id="vid-687c860fb59fc4bcfb96bb72"
-                style="display: block; margin: 0 auto; width: 100%; height: 100%; max-width: 400px; border-radius: 0;">
-            </vturb-smartplayer>
-            <script type="text/javascript">
-                var s = document.createElement("script");
-                s.src = "https://scripts.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/players/687c860fb59fc4bcfb96bb72/v4/player.js";
-                s.async = true;
-                document.head.appendChild(s);
-            </script>
-        </div>
+<div class="w-full h-full relative overflow-hidden bg-black" id="reelsVideoContainer">
+  <vturb-smartplayer
+    id="vid-688f7857a041733069c916e5"
+    style="display: block; margin: 0 auto; width: 100%; height: 100%; max-width: 400px; border-radius: 0;">
+  </vturb-smartplayer>
+  <script type="text/javascript">
+    var s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/688f7857a041733069c916e5/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+  </script>
+</div>
+
 
         <!-- Overlay do Instagram -->
         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
@@ -701,29 +738,33 @@
         </div>
     </section>
 
-    <!-- Depoimentos -->
-  <section class="py-20 px-4 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl lg:text-5xl font-light text-stone-800 mb-6">
-          Resultados <span class="text-gradient font-medium">Reais</span>
-        </h2>
+<!-- Depoimentos -->
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-light text-stone-800 mb-6">
+        Resultados <span class="text-gradient font-medium">Reais</span>
+      </h2>
+    </div>
+    <div class="flex justify-center">
+      <div class="w-full max-w-lg mx-auto">
+        <!-- Vídeo de depoimentos com cantos arredondados -->
+        <div class="relative overflow-hidden rounded-3xl shadow-elegant mx-auto" style="aspect-ratio: 9/16; max-width: 280px;">
+          <vturb-smartplayer
+            id="vid-688f771a51ec00e4ce206f7f"
+            style="display: block; width: 100%; height: 100%; border-radius: 1.5rem; overflow: hidden;">
+          </vturb-smartplayer>
+          <script type="text/javascript">
+            var s = document.createElement("script");
+            s.src = "https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/688f771a51ec00e4ce206f7f/v4/player.js";
+            s.async = true;
+            document.head.appendChild(s);
+          </script>
+        </div>
       </div>
-      <div class="flex justify-center">
-        <div class="w-full max-w-lg mx-auto">
-          <!-- Vídeo de depoimentos com cantos arredondados -->
-          <div class="relative overflow-hidden rounded-3xl shadow-elegant mx-auto" style="aspect-ratio: 9/16; max-width: 280px;">
-            <vturb-smartplayer
-              id="vid-687c89312a38c6be43a202d6"
-              style="display: block; width: 100%; height: 100%; border-radius: 1.5rem; overflow: hidden;">
-            </vturb-smartplayer>
-            <script type="text/javascript">
-              var s = document.createElement("script");
-              s.src = "https://scripts.converteai.net/bc829d99-f12f-4f6f-b4a1-fc9ed016fe32/players/687c89312a38c6be43a202d6/v4/player.js";
-              s.async = true;
-              document.head.appendChild(s);
-            </script>
-          </div>
+    </div>
+  </div>
+</section>
 
           <!-- Texto abaixo do vídeo -->
           <div class="text-center mt-8 px-4">
