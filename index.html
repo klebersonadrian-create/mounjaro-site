@@ -163,25 +163,12 @@
     });
 </script>
 
+
 <script>
-  document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      fetch("https://graph.facebook.com/v18.0/24126784976983641/events?access_token=EAAGxXdphinYBPMU6OKQsIP9o5yQ5tVULVfbjDj5xURqdgUE6YG4KC4u10dApvZC7b7Pr4NNaaWnmDAodX32PfQSxDyP3IkZA6eVar8CZB0ZBhgBbbKU8xIEvOQPXBDANTN2SJAgJUss4KiZAYOrTZCkE7nwTDJ3JaMuhDO3fGBCDZCQmZBZCVr3MQ1p1A9yFKJoj3ZCwZDZD", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          data: [{
-            event_name: "WhatsAppClick",
-            event_time: Math.floor(Date.now() / 1000),
-            action_source: "website",
-            event_source_url: window.location.href,
-            user_data: {
-              client_user_agent: navigator.userAgent
-            }
-          }]
-        })
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+      link.addEventListener("click", function () {
+        fbq('track', 'Lead');
       });
     });
   });
@@ -1030,7 +1017,6 @@
 </div>
 </footer>
 <script src="https://player.vimeo.com/api/player.js"></script>
-
 <!-- script Cloudflare (ou outro) -->
 <script>
       (function(){
