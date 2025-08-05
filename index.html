@@ -162,6 +162,30 @@
         revealOnScroll();
     });
 </script>
+
+<script>
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      fetch("https://graph.facebook.com/v18.0/24126784976983641/events?access_token=EAAGxXdphinYBPMU6OKQsIP9o5yQ5tVULVfbjDj5xURqdgUE6YG4KC4u10dApvZC7b7Pr4NNaaWnmDAodX32PfQSxDyP3IkZA6eVar8CZB0ZBhgBbbKU8xIEvOQPXBDANTN2SJAgJUss4KiZAYOrTZCkE7nwTDJ3JaMuhDO3fGBCDZCQmZBZCVr3MQ1p1A9yFKJoj3ZCwZDZD", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          data: [{
+            event_name: "WhatsAppClick",
+            event_time: Math.floor(Date.now() / 1000),
+            action_source: "website",
+            event_source_url: window.location.href,
+            user_data: {
+              client_user_agent: navigator.userAgent
+            }
+          }]
+        })
+      });
+    });
+  });
+</script>
 </body></html>
 <!-- Metadados principais -->
 <meta charset="utf-8"/>
@@ -243,7 +267,6 @@
             background-color: #d4a574 !important;
         }
     </style>
-
 <body class="bg-stone-50 text-stone-800">
 <!-- Header -->
 <header class="bg-white shadow-sm border-b border-stone-200">
@@ -789,7 +812,6 @@
 </div>
 </section></div>
 </section>
-
 <!-- Garantias -->
 <section class="py-20 px-4 gradient-bg">
 <div class="max-w-6xl mx-auto">
@@ -1008,231 +1030,7 @@
 </div>
 </footer>
 <script src="https://player.vimeo.com/api/player.js"></script>
-<script>
-        // Parallax and scroll animation system
-        let ticking = false;
-        
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            const parallaxElements = document.querySelectorAll('.floating-element');
-            
-            parallaxElements.forEach(element => {
-                const speed = element.getAttribute('data-speed') || 0.5;
-                const yPos = -(scrolled * speed);
-                element.style.transform = `translateY(${yPos}px)`;
-            });
-            
-            // Special animation for main product image
-            const mainImage = document.getElementById('mainProductImage');
-            if (mainImage) {
-                const rotation = scrolled * 0.1;
-                const scale = 1 + (scrolled * 0.0002);
-                mainImage.style.transform = `translateY(${scrolled * -0.3}px) rotate(${rotation}deg) scale(${Math.min(scale, 1.1)})`;
-            }
-            
-            ticking = false;
-        }
-        
-        function requestTick() {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        }
-        
-        // Scroll reveal animation
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll('.scroll-reveal');
-            
-            reveals.forEach((element, index) => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    // Add delay for guarantee boxes
-                    if (element.classList.contains('guarantee-box')) {
-                        const delay = element.getAttribute('data-delay') || 0;
-                        setTimeout(() => {
-                            element.classList.add('visible');
-                        }, parseInt(delay));
-                    } else {
-                        element.classList.add('visible');
-                    }
-                }
-            });
-        }
-        
-        // Touch and scroll event handlers
-        window.addEventListener('scroll', requestTick);
-        window.addEventListener('touchmove', requestTick);
-        window.addEventListener('scroll', revealOnScroll);
-        
-        // Initialize on load
-        window.addEventListener('load', () => {
-            updateParallax();
-            revealOnScroll();
-        });
-        
-        function toggleAccordion(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('svg');
-            
-            // Close all other accordions
-            document.querySelectorAll('.accordion-content').forEach(item => {
-                if (item !== content) {
-                    item.classList.remove('active');
-                    item.previousElementSibling.querySelector('svg').style.transform = 'rotate(0deg)';
-                }
-            });
-            
-            // Toggle current accordion
-            content.classList.toggle('active');
-            
-            if (content.classList.contains('active')) {
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
 
-        // Smooth scroll for buttons and video placeholders
-        document.querySelectorAll('button').forEach(button => {
-            if (button.textContent.includes('Agendar') || button.textContent.includes('Agenda')) {
-                button.addEventListener('click', function() {
-                    alert('Redirecionando para agendamento...');
-                });
-            }
-        });
-
-        // Video loading optimization
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.querySelector('video');
-            const loadingIndicator = document.querySelector('.video-loading');
-            
-            if (video && loadingIndicator) {
-                // Hide loading indicator when video can play
-                video.addEventListener('canplay', function() {
-                    loadingIndicator.style.opacity = '0';
-                    setTimeout(() => {
-                        loadingIndicator.style.display = 'none';
-                    }, 300);
-                });
-                
-                // Show loading indicator on load start
-                video.addEventListener('loadstart', function() {
-                    loadingIndicator.style.display = 'flex';
-                    loadingIndicator.style.opacity = '1';
-                });
-                
-                // Handle video errors
-                video.addEventListener('error', function() {
-                    loadingIndicator.innerHTML = `
-                        <div class="text-center text-white">
-                            <div class="w-12 h-12 bg-stone-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </div>
-                            <p class="text-sm">Clique para reproduzir</p>
-                        </div>
-                    `;
-                });
-            }
-        });
-
-        // Video placeholder click handlers
-        document.querySelectorAll('.video-container').forEach(container => {
-            container.addEventListener('click', function() {
-                alert('Aqui você adicionará o link do vídeo da Jaciane Allves');
-            });
-        });
-
-        // Simple Carousel Navigation
-        let currentSlide = 0;
-        const totalSlides = 5;
-        
-        function updateCarousel() {
-            const carousel = document.getElementById('celebrityCarousel');
-            const indicators = document.querySelectorAll('.carousel-indicator');
-            
-            if (!carousel) return;
-            
-            // Calculate position (each slide is 320px + 24px gap = 344px)
-            const translateX = currentSlide * -344;
-            carousel.style.transform = `translateX(${translateX}px)`;
-            
-            // Update indicators
-            indicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.add('active');
-                    indicator.style.backgroundColor = '#d4a574';
-                } else {
-                    indicator.classList.remove('active');
-                    indicator.style.backgroundColor = '#d1d5db';
-                }
-            });
-        }
-        
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }
-        
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-        
-        // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set up button clicks
-            const nextBtn = document.getElementById('nextBtn');
-            const prevBtn = document.getElementById('prevBtn');
-            const indicators = document.querySelectorAll('.carousel-indicator');
-            
-            if (nextBtn) {
-                nextBtn.onclick = nextSlide;
-            }
-            
-            if (prevBtn) {
-                prevBtn.onclick = prevSlide;
-            }
-            
-            // Set up indicator clicks
-            indicators.forEach((indicator, index) => {
-                indicator.onclick = function() {
-                    currentSlide = index;
-                    updateCarousel();
-                };
-            });
-            
-                    // seu script do evento WhatsAppClick
-
-    <script>
-      document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
-        link.addEventListener('click', function() {
-          fetch("https://graph.facebook.com/v18.0/24126784976983641/events?access_token=EAAGxXdphinYBPMU6OKQsIP9o5yQ5tVULVfbjDj5xURqdgUE6YG4KC4u10dApvZC7b7Pr4NNaaWnmDAodX32PfQSxDyP3IkZA6eVar8CZB0ZBhgBbbKU8xIEvOQPXBDANTN2SJAgJUss4KiZAYOrTZCkE7nwTDJ3JaMuhDO3fGBCDZCQmZBZCVr3MQ1p1A9yFKJoj3ZCwZDZD", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              data: [{
-                event_name: "WhatsAppClick",
-                event_time: Math.floor(Date.now() / 1000),
-                action_source: "website",
-                event_source_url: window.location.href,
-                user_data: {
-                  client_user_agent: navigator.userAgent
-                }
-              }]
-            })
-          });
-        });
-      });
-    </script>
 <!-- script Cloudflare (ou outro) -->
 <script>
       (function(){
@@ -1274,7 +1072,6 @@
   });
 </script>
 </body>
-
 <script>
   document.addEventListener('mousemove', function (e) {
     document.querySelectorAll('.floating-element').forEach(function (el) {
@@ -1285,4 +1082,3 @@
     });
   });
 </script>
-
