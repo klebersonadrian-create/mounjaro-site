@@ -39,7 +39,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     
     // Configuração segura - apenas PageView automático
-    fbq('init', '1588442655118843');
     fbq('track', 'PageView');
     
     // Função para disparar Lead apenas no CTA
@@ -50,9 +49,7 @@
         });
     }
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1588442655118843&ev=PageView&noscript=1"
-    /></noscript>
+    
     <!-- End Meta Pixel Code -->
     
     <!-- TikTok Pixel Code Start -->
@@ -67,6 +64,43 @@
     }(window, document, 'ttq');
     </script>
     <!-- TikTok Pixel Code End -->
+<!-- VTurb: Preloads para carregamento rápido -->
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/6898d063106a59a019f5b90d/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/6898cfadc587359810fa617b/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://api.vturb.com.br">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1457287148643802');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1457287148643802&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script>
+  // Mantém o disparo de Lead no clique do CTA (compatível com seu JS atual)
+  function trackLead() {
+    try {
+      fbq('track', 'Lead', {
+        content_name: 'Protocolo GLP-X',
+        content_category: 'Consultoria'
+      });
+    } catch(e) { /* no-op */ }
+  }
+</script>
 </head>
 <body class="bg-cream text-gray-800 font-sans">
     <!-- Header Fixo -->
@@ -109,15 +143,11 @@
             
             <!-- VSL Vertical Player - Configuração Segura -->
             <div class="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl max-w-sm mx-auto">
-                <div class="aspect-[9/16] relative">
-                    <!-- Placeholder for external video player -->
-                    <div id="video-placeholder" class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 cursor-pointer" onclick="loadSecureVideo()">
-                        <div class="text-center text-white px-6">
-                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/30 transition-colors">
-                                <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </div>
+<!-- VTurb: Player embed limpinho -->
+<div class="w-full flex justify-center">
+  <vturb-smartplayer id="vid-6898d063106a59a019f5b90d" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+</div>
+</div>
                             <p class="text-lg font-medium mb-2">VSL Exclusiva</p>
                             <p class="text-sm text-gray-300">Protocolo GLP-X</p>
                             <p class="text-xs text-gray-400 mt-2">Clique para assistir</p>
@@ -131,12 +161,6 @@
                     </div>
                 </div>
                 
-                <!-- Video Info Overlay -->
-                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                    <div class="text-white">
-                        <p class="font-medium text-sm">Protocolo GLP-X</p>
-                        <p class="text-xs text-gray-300">Com Jaciane Allves</p>
-                    </div>
                 </div>
             </div>
             
@@ -808,9 +832,8 @@
             
             // ✅ PRELOADS CONFIGURADOS - Adicione os preloads necessários no <head>
             // <link rel="preload" href="https://vturb.com.br/embed/SEU_VIDEO_ID_VTURB" as="document">
-            // <link rel="dns-prefetch" href="//vturb.com.br">
-            
-            console.log('Player Vturb configurado - aguardando código embed...');
+            //
+console.log('Player Vturb configurado - aguardando código embed...');
             
             // Remover comentários das linhas acima quando inserir o código real
             videoPlayer.classList.remove('hidden');
@@ -1230,5 +1253,11 @@
         // Initialize counter when page loads
         document.addEventListener('DOMContentLoaded', initClientCounter);
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96cb6c8461916f85',t:'MTc1NDc4NjIzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96cb6c8461916f85',t:'MTc1NDc4NjIzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><!-- VTurb: Loader do player -->
+<script type="text/javascript">
+  var s=document.createElement("script");
+  s.src="https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/6898d063106a59a019f5b90d/v4/player.js";
+  s.async=!0; document.head.appendChild(s);
+</script>
+</body>
 </html>
