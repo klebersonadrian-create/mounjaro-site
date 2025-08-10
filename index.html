@@ -38,7 +38,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     
     // Configuração segura - apenas PageView automático
-    fbq('init', '1588442655118843');
     fbq('track', 'PageView');
     
     // Função para disparar Lead apenas no CTA
@@ -75,6 +74,34 @@
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://api.vturb.com.br">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1457287148643802');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1457287148643802&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script>
+  // Mantém o disparo de Lead no clique do CTA (compatível com seu JS atual)
+  function trackLead() {
+    try {
+      fbq('track', 'Lead', {
+        content_name: 'Protocolo GLP-X',
+        content_category: 'Consultoria'
+      });
+    } catch(e) { /* no-op */ }
+  }
+</script>
 </head>
 <body class="bg-cream text-gray-800 font-sans">
     <!-- Header Fixo -->
