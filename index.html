@@ -131,10 +131,13 @@
                     
                     <!-- Video player container - será carregado dinamicamente -->
                     
-<div id="video-player" class="absolute inset-0">
-    <vturb-smartplayer id="vid-6898430e79d73837f00609d4"
-        style="display: block; margin: 0 auto; width: 100%; max-width: 400px;">
-    </vturb-smartplayer>
+
+<div id="video-player" class="flex justify-center items-center w-full">
+    <div style="width: 100%; max-width: 800px; margin: 0 auto;">
+        <vturb-smartplayer id="vid-6898430e79d73837f00609d4"
+            style="width: 100%; height: auto;">
+        </vturb-smartplayer>
+    </div>
     <script type="text/javascript">
         var s=document.createElement("script");
         s.src="https://scripts.converteai.net/6b263545-ec11-40ea-bf5b-aef726d4deca/players/6898430e79d73837f00609d4/v4/player.js";
@@ -142,6 +145,7 @@
         document.head.appendChild(s);
     </script>
 </div>
+
 
                 </div>
                 
